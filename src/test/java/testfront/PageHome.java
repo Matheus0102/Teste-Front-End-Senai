@@ -2,6 +2,7 @@ package testfront;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,7 +19,10 @@ public class PageHome {
 		
 		driver.get("https://www.google.com/");
 		
-		driver.findElement(By.title("Pesquisar")).sendKeys("Senai");
-		driver.findElement(By.title(""));
+		driver.findElement(By.cssSelector("input[title='Pesquisar']")).sendKeys("Senai Mogi Das Cruzes");
+		driver.findElement(By.cssSelector("input[title='Pesquisar']")).sendKeys(Keys.ENTER);
+		driver.findElement(By.cssSelector("a[href='https://mogidascruzes.sp.senai.br/']")).click();
+		driver.findElement(By.cssSelector("a[title='Bolsas de Estudo']")).click();
+		driver.findElement(By.cssSelector("a[title='POWER BI']")).click();
 	}
 }
